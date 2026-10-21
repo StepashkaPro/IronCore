@@ -1,0 +1,635 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Raleway:ital@0;1&display=swap');
+
+/* ===============================
+   1. Переменные проекта
+   =============================== */
+:root {
+  /* Основные цвета проекта */
+  --color-bg: #121212;
+  --color-bg-light: #242424;
+  --color-text-title: #F5F5F5;
+  --color-text:#B0B0B0;
+  --color-muted: #666666;
+  --color-primary: #ff453a;
+  --color-primary-dark: #e86f68;
+  --color-border: #dddddd;
+  --color-surface: #1A1A1A;
+  --color-surface-accent: #1A1A1A;
+  --color-danger: #b00020;
+  --color-success: #168a2f;
+  --color-success-bg: #eefaf0;
+  --color-white: #ffffff;
+  --color-black: #121212;
+
+  /* Отступы */
+  --space-xs: 4px;
+  --space-sm: 8px;
+  --space-md: 16px;
+  --space-lg: 24px;
+  --space-xl: 32px;
+
+  /* Скругления */
+  --radius-sm: 6px;
+  --radius-md: 8px;
+  --radius-lg: 12px;
+
+  /* Размеры */
+  --container-width: 85%;
+
+}
+
+
+/* ===============================
+   2. Базовые стили
+   =============================== */
+
+* {
+  box-sizing: border-box;
+  font-family: "Montseratt", sans-serif;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  line-height: 1.5;
+  color: var(--color-text-title);
+  background-color: var(--color-bg);
+  /* background-image: url('images/Background.png');
+  background-size: cover;
+  background-position: center; */
+}
+
+.breadcrumbs {
+  max-width: var(--container-width);
+  margin: 0 auto var(--space-md);
+  font-size: 14px;
+  color: var(--color-muted);
+}
+
+.breadcrumbs a {
+  color: var(--color-primary);
+}
+
+.breadcrumbs span::before {
+  content: " / ";
+  color: var(--color-muted);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+:target {
+  outline: 2px dashed var(--color-primary);
+  outline-offset: 4px;
+}
+
+.products-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: var(--space-lg);
+}
+
+.categories-grid {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: var(--space-lg);
+}
+
+.catalog-layout {
+  max-width: var(--container-width);
+  margin: 0 auto var(--space-xl);
+  display: grid;
+  grid-template-columns: 260px 1fr;
+  grid-template-areas: "filters products";
+  gap: var(--space-lg);
+}
+
+.catalog-filters {
+  grid-area: filters;
+  padding: var(--space-md);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  background-color: var(--color-surface);
+}
+
+.catalog-products {
+  grid-area: products;
+}
+
+.filters-form {
+  display: grid;
+  gap: var(--space-md);
+}
+
+.filters-form fieldset {
+  margin: 0;
+  padding: var(--space-md);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-sm);
+}
+
+.filters-form legend {
+  font-weight: 700;
+}
+
+.filters-form label {
+  display: block;
+  margin-bottom: var(--space-sm);
+}
+
+.filters-form input[type="number"] {
+  width: 100%;
+  padding: 8px 10px;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-sm);
+  font: inherit;
+}
+
+/* ===============================
+   3. Общие элементы интерфейса
+   =============================== */
+
+header,
+main,
+footer {
+  padding: var(--space-lg);
+}
+
+
+header {
+  background-color: var(--color-surface);
+}
+
+footer {
+  background-color: var(--color-surface);
+}
+
+a {
+  color: var(--color-primary);
+}
+
+a:hover {
+  color: var(--color-primary-dark);
+}
+
+a:focus-visible {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 3px;
+}
+
+
+
+.site-header {
+    max-width: 100%px;
+    margin: 0 outo;
+    position: relative; 
+
+}
+
+.site-header .login__button {
+  position: absolute; 
+  right: 0;
+  display: inline-block;
+  padding: var(--space-sm) var(--space-md);
+  color: var(--color-white);
+  background: transparent;
+  text-decoration: none;
+  border: none;
+  cursor: pointer;
+}
+
+.login__button i {
+  font-size: 20px;
+}
+
+.login__button p {
+  margin-top: 0;
+}
+
+.sile-logo {
+    font-weight: bold;
+    text-decoration: none;
+    color: #222222;
+}
+
+.site-nav__list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: var(--space-md);
+  padding: 0;
+  margin: var(--space-md) 0 0;
+  list-style: none;
+}
+
+.site-nav__list a {
+  display: inline-block;
+  padding: var(--space-sm) var(--space-md);
+  color: var(--color-primary);
+  text-decoration: none;
+  border-radius: var(--radius-sm);
+}
+
+.site-nav__list a:hover {
+  color: var(--color-white);
+  background-color: var(--color-primary);
+}
+
+/* ===============================
+   4. Компоненты страницы
+   =============================== */
+
+
+.hero {
+  width: 100%;
+  height: 100vh;
+  margin: 0 auto var(--space-xl);
+  padding: var(--space-xl) var(--space-lg);
+  border-radius: var(--radius-lg);
+  position: relative;
+  overflow: hidden;
+}
+
+.bg-image {
+  background-image: url('images/backgrounds/Background.png');
+  background-size: cover;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  filter: blur(5px);
+}
+
+.content {
+  z-index: 1;
+  position: relative;
+}
+
+.hero p {
+  color: var(--color-text)  
+}
+
+.section {
+  max-width: var(--container-width);
+  margin: 0 auto var(--space-xl);
+}
+
+.section h2 {
+  margin-top: 0;
+  margin-bottom: 50px;
+}
+
+.category-card {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  gap: var(--space-sm);
+  margin-bottom: 0;
+  padding: var(--space-sm);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  background-color: var(--color-surface);
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.5s ;
+}
+
+.category-card h3 {
+  position: absolute;
+  text-align: center;
+  bottom: 10px;
+  font-weight: 700;
+  font-size: 16px;
+  bottom: 0;
+}
+
+.category-card img {
+ max-width: 70%;
+ max-height: 70%;
+ display: block;
+ padding-bottom: 30px;
+}
+
+.category-card:hover {
+  border-color: var(--color-primary);
+  transform: translate(0, -15px);
+  box-shadow: 0 0 10px 5px rgba(255, 69, 58, 0.5);
+}
+
+.product-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-sm);
+  margin-bottom: 0;
+  padding: var(--space-lg);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  background-color: var(--color-surface);
+  transition: transform 0.5s ;
+}
+
+.product-card:hover {
+  border-color: var(--color-primary);
+  transform: translate(0, -10px);
+  box-shadow: 0 0 20px rgba(255, 69, 58, 0.5);
+}
+
+.product-card img {
+  max-width: 70%;
+  max-height: 70%;
+}
+
+.pr-features {
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  gap: var(--space-sm);
+  width: 100%;
+}
+
+.pr-features__item {
+  display: flex;
+  background-color: var(--color-bg-light);
+  border-radius: 10px;
+}
+
+.pr-features__content {
+  flex: 1;
+  padding: var(--space-sm);
+  text-align: left;
+  width: 80%;
+}
+
+.pr-features__name {
+  background: transparent;
+  color: #8f90a6;
+  font-size: 14px;
+}
+
+.pr-features__value {
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.product-card .button {
+  margin-top: auto;
+  width: 100%;
+  align-self: flex-start;
+  border-radius: var(--radius-md);
+}
+
+.product-card:hover {
+  border-color: var(--color-primary);
+}
+
+.product-card h3 {
+  margin-top: 0;
+}
+
+.button {
+  display: inline-block;
+  padding: var(--space-sm) var(--space-md);
+  color: var(--color-black);
+  background-color: var(--color-primary);
+  text-decoration: none;
+  border: none;
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+}
+
+.button:hover {
+  background-color: var(--color-primary-dark);
+  color: var(--color-black);
+}
+
+.button:focus-visible {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 3px;
+}
+
+.button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+
+.aside-info {
+  max-width: var(--container-width);
+  margin: 0 auto var(--space-xl);
+  padding: var(--space-md);
+  border-left: 4px solid var(--color-primary);
+  background-color: var(--color-bg);
+}
+
+
+/* ===============================
+   5. Форма и модальное окно
+   =============================== */
+
+.close-order-dialog {
+  position: absolute; 
+  right: 20px;
+  display: inline-block;
+  color: var(--color-white);
+  background: transparent;
+  text-decoration: none;
+  border: none;
+  cursor: pointer;
+}
+
+.close-order-dialog i {
+  font-size: 20px;
+}
+
+.order-dialog::backdrop {
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.order-dialog {
+  width: min(100% - 32px, 560px);
+  padding: var(--space-lg);
+  border-radius: var(--radius-lg);
+  background: transparent;
+  border: 1px solid var(--color-primary);
+  backdrop-filter: blur(20px);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  color: var(--color-text-title);
+}
+
+.order-dialog::backdrop {
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.order-dialog h2 {
+  text-align: center;
+}
+
+.form-field {
+  margin-bottom: var(--space-md);
+}
+
+.form-field label {
+  display: block;
+  margin-bottom: var(--space-xs);
+}
+
+.form-field input,
+.form-field select,
+.form-field textarea {
+  border-radius: var(--radius-md);
+  padding: 5px var(--space-md);
+}
+
+.form-field input:hover,
+.form-field select:hover,
+.form-field textarea:hover {
+  transform-origin: left bottom;
+  transform: scale(1.1);
+  transition: 0.5s ease;
+}
+
+.form-field input[type="checkbox"] {
+  width: auto;
+}
+
+.form-field small {
+  display: block;
+  margin-top: var(--space-xs);
+  color: var(--color-muted);
+}
+
+.form-field input:focus-visible,
+.form-field select:focus-visible,
+.form-field textarea:focus-visible,
+.form-actions button:focus-visible {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 3px;
+  transform-origin: left bottom;
+  transform: scale(1.1);
+  transition: 0.5s ease;
+}
+
+.form-actions button {
+  padding: var(--space-sm) var(--space-md);
+  background-color: var(--color-primary);
+  color: var(--color-black);
+  border-radius: var(--radius-sm);
+  border: none;
+}
+
+.form-actions button:hover{
+  background-color: var(--color-primary-dark);
+  color: var(--color-black);
+}
+
+[aria-invalid="true"] {
+  border-color: var(--color-danger);
+}
+
+.success-message {
+  max-width: var(--container-width);
+  margin: var(--space-lg) auto;
+  padding: var(--space-md);
+  border-left: 4px solid var(--color-success);
+  background-color: var(--color-success-bg);
+}
+
+.login-dialog {
+  width: 25%;
+  padding: var(--space-lg);
+  border: none;
+  border-radius: var(--radius-lg);
+  background: transparent;
+  border: 1px solid var(--color-primary);
+  backdrop-filter: blur(20px);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  color: var(--color-text-title);
+}
+
+.login-dialog::backdrop {
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.close-login-dialog {
+  position: absolute; 
+  right: 20px;
+  display: inline-block;
+  color: var(--color-white);
+  background: transparent;
+  text-decoration: none;
+  border: none;
+  cursor: pointer;
+}
+
+.close-login-dialog i {
+  font-size: 20px;
+}
+
+.login-dialog h2 {
+  text-align: center;
+}
+
+.login-field {
+  width: 100%;
+  height: 50px;
+  margin: 30px 0;
+  position: relative;
+}
+
+.login-field input {
+  width: 100%;
+  height: 100%;
+  background: transparent;
+  outline: none;
+  border: 1px solid var(--color-primary);
+  border-radius: 40px;
+  font-size: 14px;
+  color: var(--color-white);
+  padding: var(--space-md) var(--space-lg) var(--space-md) var(--space-md);
+}
+
+.login-field input::placeholder {
+  color: var(--color-white)
+}
+
+.login-field i {
+  position: absolute;
+  right: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 18px;
+}
+
+.sing-in {
+  width: 100%;
+  height: 40px;
+  background-color: var(--color-primary);
+  border: none;
+  outline: none;
+  border-radius: 40px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  color: var(--color-black);
+  font-weight: 600;
+}
+
+.login-dialog .register-link {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.register-link a {
+  text-decoration: none;
+  font-weight: 600;
+}
+
+
+
+
+
+
+
