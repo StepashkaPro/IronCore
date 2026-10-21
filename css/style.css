@@ -478,18 +478,16 @@ a:focus-visible {
 }
 
 .form-field input,
-.form-field select,
 .form-field textarea {
-  border-radius: var(--radius-md);
-  padding: 5px var(--space-md);
-}
-
-.form-field input:hover,
-.form-field select:hover,
-.form-field textarea:hover {
-  transform-origin: left bottom;
-  transform: scale(1.1);
-  transition: 0.5s ease;
+  width: 100%;
+  height: 100%;
+  background: transparent;
+  outline: none;
+  border: 1px solid var(--color-primary);
+  border-radius: 40px;
+  font-size: 14px;
+  color: var(--color-white);
+  padding: var(--space-md) var(--space-lg) var(--space-md) var(--space-md);
 }
 
 .form-field input[type="checkbox"] {
@@ -502,28 +500,17 @@ a:focus-visible {
   color: var(--color-muted);
 }
 
-.form-field input:focus-visible,
-.form-field select:focus-visible,
-.form-field textarea:focus-visible,
-.form-actions button:focus-visible {
-  outline: 2px solid var(--color-primary);
-  outline-offset: 3px;
-  transform-origin: left bottom;
-  transform: scale(1.1);
-  transition: 0.5s ease;
-}
-
-.form-actions button {
-  padding: var(--space-sm) var(--space-md);
+.submit__button {
+  width: 100%;
+  height: 40px;
   background-color: var(--color-primary);
-  color: var(--color-black);
-  border-radius: var(--radius-sm);
   border: none;
-}
-
-.form-actions button:hover{
-  background-color: var(--color-primary-dark);
+  outline: none;
+  border-radius: 40px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
   color: var(--color-black);
+  font-weight: 600;
 }
 
 [aria-invalid="true"] {
